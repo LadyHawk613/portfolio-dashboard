@@ -1,0 +1,207 @@
+:root {
+    /* Color Palette */
+    --bg-dark-teal: #08292a;
+    --bg-light-teal: #104c4d;
+    --accent-glow: #00ffcc;
+    --btn-gradient-1: #ff6b6b;
+    --btn-gradient-2: #ff8e53;
+    --text-main: #e0f7f6;
+    --text-muted: #95c9c6;
+    
+    /* Glassmorphism Settings */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top left, var(--bg-light-teal), var(--bg-dark-teal));
+    background-attachment: fixed;
+    color: var(--text-main);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Abstract Background Blobs for Creativity */
+.blob {
+    position: absolute;
+    filter: blur(90px);
+    z-index: -1;
+    opacity: 0.4;
+    border-radius: 50%;
+}
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: #00ffcc;
+}
+.blob-2 {
+    bottom: 20%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: #ff6b6b;
+}
+
+/* Header Styling */
+header {
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-container h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #ffffff, var(--accent-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.header-container h2 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-container p {
+    font-size: 1.1rem;
+    color: #b2dfdc;
+}
+
+/* Portfolio Layout */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.portfolio-section {
+    margin-bottom: 4rem;
+}
+
+.portfolio-section h3 {
+    font-size: 1.8rem;
+    color: var(--accent-glow);
+    border-bottom: 2px solid rgba(0, 255, 204, 0.3);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Glassmorphism Cards */
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-glow);
+}
+
+.card-content {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.card-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* Neon Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(0, 255, 204, 0.1);
+    color: var(--accent-glow);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+}
+
+/* Vibrant Floating Buttons */
+.card-action {
+    padding: 0 2rem 2rem;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--btn-gradient-1), var(--btn-gradient-2));
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff7b7b, #ff9e63);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.2);
+}
