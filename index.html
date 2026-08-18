@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christy Winstead | Interactive Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=portrait-align-230">
+    <link rel="stylesheet" href="style.css?v=dynamic-align-frame">
 </head>
 <body>
     <!-- Decorative background elements -->
@@ -116,5 +116,23 @@
     <footer>
         <p>&copy; 2026 Christy Winstead. Hosted via GitHub Pages.</p>
     </footer>
+
+    <script>
+        (() => {
+            const intro = document.querySelector('.header-intro');
+            const copy = document.querySelector('.header-copy');
+
+            if (!intro || !copy) return;
+
+            const syncPortraitSize = () => {
+                const textHeight = Math.round(copy.getBoundingClientRect().height);
+                intro.style.setProperty('--portrait-size', `${textHeight}px`);
+            };
+
+            syncPortraitSize();
+            new ResizeObserver(syncPortraitSize).observe(copy);
+            window.addEventListener('load', syncPortraitSize);
+        })();
+    </script>
 </body>
 </html>

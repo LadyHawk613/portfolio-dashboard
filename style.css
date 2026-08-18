@@ -65,21 +65,22 @@ header {
 }
 
 .header-intro {
+    --portrait-size: 230px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.25rem;
     text-align: left;
 }
 
 .profile-avatar {
-    width: 230px;
-    height: 230px;
-    flex: 0 0 230px;
+    width: var(--portrait-size);
+    height: var(--portrait-size);
+    flex: 0 0 var(--portrait-size);
     object-fit: cover;
     object-position: center;
-    border: 3px solid #ffffff;
+    border: 5px solid #ffffff;
     border-radius: 50%;
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3), 0 6px 18px rgba(0, 0, 0, 0.34);
 }
 
 .header-copy {
@@ -115,14 +116,7 @@ header {
     }
 
     .header-intro {
-        align-items: flex-start;
         gap: 1rem;
-    }
-
-    .profile-avatar {
-        width: 230px;
-        height: 230px;
-        flex-basis: 230px;
     }
 
     .header-container h1 {
