@@ -60,8 +60,30 @@ header {
 }
 
 .header-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+}
+
+.header-intro {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: left;
+}
+
+.profile-avatar {
+    width: 88px;
+    height: 88px;
+    flex: 0 0 88px;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.28);
+}
+
+.header-copy {
+    min-width: 0;
 }
 
 .header-container h1 {
@@ -85,6 +107,37 @@ header {
 .header-container p {
     font-size: 1.1rem;
     color: #b2dfdc;
+}
+
+@media (max-width: 640px) {
+    header {
+        padding: 4rem 1.25rem 3rem;
+    }
+
+    .header-intro {
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .profile-avatar {
+        width: 72px;
+        height: 72px;
+        flex-basis: 72px;
+    }
+
+    .header-container h1 {
+        font-size: 2.15rem;
+    }
+
+    .header-container h2 {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.85rem;
+    }
+
+    .header-container p {
+        font-size: 0.95rem;
+    }
 }
 
 /* Portfolio Layout */
