@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christy Winstead | Interactive Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=dynamic-align-frame">
+    <link rel="stylesheet" href="style.css?v=mobile-responsive">
 </head>
 <body>
     <!-- Decorative background elements -->
@@ -125,12 +125,14 @@
             if (!intro || !copy) return;
 
             const syncPortraitSize = () => {
-                const textHeight = Math.round(copy.getBoundingClientRect().height);
-                intro.style.setProperty('--portrait-size', `${textHeight}px`);
+                const isMobile = window.matchMedia('(max-width: 640px)').matches;
+                const size = isMobile ? 112 : Math.round(copy.getBoundingClientRect().height);
+                intro.style.setProperty('--portrait-size', `${size}px`);
             };
 
             syncPortraitSize();
             new ResizeObserver(syncPortraitSize).observe(copy);
+            window.addEventListener('resize', syncPortraitSize);
             window.addEventListener('load', syncPortraitSize);
         })();
     </script>
